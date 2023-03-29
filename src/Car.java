@@ -1,16 +1,18 @@
 public class Car{
     private int x;
     private int y;
-    private int angle;
+
+    private Orientation direction;
+
     private int speed;
 
     private String image;
 
 
-    public Car(int x, int y, int angle, int speed, String image) {
+    public Car(int x, int y, Orientation direction, int speed, String image) {
         this.x = x;
         this.y = y;
-        this.angle = angle;
+        this.direction = direction;
         this.speed = speed;
         this.image = image;
 
