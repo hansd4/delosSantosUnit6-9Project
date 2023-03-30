@@ -1,4 +1,4 @@
-public class Car{
+public class Car {
     private int x;
     private int y;
 
@@ -15,14 +15,32 @@ public class Car{
         this.direction = direction;
         this.speed = speed;
         this.image = image;
-
     }
 
-    public void forward(int dist) {
-
+    public void move() {
+        switch (direction) {
+            case NORTH -> y++;
+            case EAST -> x++;
+            case SOUTH -> y--;
+            case WEST -> x--;
+        }
     }
 
-    public void turn(int angle) {
+    public void turnLeft() {
+        direction = switch (direction) {
+            case NORTH -> Orientation.WEST;
+            case EAST -> Orientation.NORTH;
+            case SOUTH -> Orientation.EAST;
+            case WEST -> Orientation.SOUTH;
+        };
+    }
 
+    public void turnRight() {
+        direction = switch (direction) {
+            case NORTH -> Orientation.EAST;
+            case EAST -> Orientation.SOUTH;
+            case SOUTH -> Orientation.WEST;
+            case WEST -> Orientation.NORTH;
+        };
     }
 }
